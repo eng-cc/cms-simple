@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/adminGroups.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/components/</a> adminGroups.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">24.24% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.41% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/27</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">1 branch</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// &lt;template&gt;
+//   &lt;div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"&gt;
+//     &lt;ol class="breadcrumb"&gt;
+//       &lt;li&gt;&lt;a v-link="{path:'/index'}"&gt;&lt;i class="fa fa-home"&gt;&lt;/i&gt; 首页&lt;/a&gt;&lt;/li&gt;
+//       &lt;li class="active"&gt;&lt;i class="fa fa-cog"&gt;&lt;/i&gt; 用户组设置&lt;/li&gt;
+//     &lt;/ol&gt;
+//     &lt;p class="text-center" v-if="!geted"&gt;
+//       &lt;i class="fa fa-spinner fa-pulse fa-3x"&gt;&lt;/i&gt;
+//     &lt;/p&gt;
+//     &lt;div class="panel panel-default" v-if="geted"&gt;
+//       &lt;div class="table-responsive"&gt;
+//         &lt;table class="table table-bordered table-hover tablesorter table-striped"&gt;
+//           &lt;thead class="navbar-inner"&gt;
+//             &lt;th&gt;#&lt;/th&gt;
+//             &lt;th&gt;用户组名称&lt;/th&gt;
+//             &lt;th&gt;管理等级&lt;/th&gt;
+//             &lt;th&gt;描述&lt;/th&gt;
+//             &lt;th&gt;备注&lt;/th&gt;
+//           &lt;/thead&gt;
+//           &lt;tbody&gt;
+//             &lt;tr v-for="item of groupList"&gt;
+//               &lt;th scope="row"&gt;{{item.id}}&lt;/th&gt;
+//               &lt;td&gt;&lt;a v-link="{path: '/index/admin_authorization', query:{cid:item.id}}"&gt;{{item.name}}&lt;/a&gt;&lt;/td&gt;
+//               &lt;td&gt;{{item.type}}&lt;/td&gt;
+//               &lt;td&gt;{{item.description}}&lt;/td&gt;
+//               &lt;td&gt;
+//                 &lt;a :typeid="item.type" :cid="item.id" cname="{{item.name}}" cdis="{{item.description}}" data-toggle="modal" @click="changeActiveCid()" href="#eidt" class="btn btn-primary btn-xs"&gt; &lt;i class="fa fa-pencil-square-o fa-fw"&gt;&lt;/i&gt; 编辑&lt;/a&gt;
+//                 &lt;a cid="{{item.id}}" cname="{{item.name}}" data-toggle="modal" @click="changeActiveCid()" href="#delete" class="btn btn-danger btn-xs"&gt;&lt;i class="fa fa-trash-o fa-fw"&gt;&lt;/i&gt; 删除&lt;/a&gt;&lt;/td&gt;
+//             &lt;/tr&gt;
+//           &lt;/tbody&gt;
+//         &lt;/table&gt;
+//       &lt;/div&gt;
+//     &lt;/div&gt;
+//     &lt;p&gt;&lt;a data-toggle="modal" href="#add" class="btn btn-default "&gt;&lt;i class="fa fa-plus fa-fw"&gt;&lt;/i&gt; 新增用户组&lt;/a&gt;&lt;/p&gt;
+//     &lt;!-- 删除 --&gt;
+//     &lt;div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"&gt;
+//       &lt;form id="form1" action="#" method="post" class="form-horizontal form"&gt;
+//         &lt;div class="modal-dialog"&gt;
+//           &lt;div class="modal-content"&gt;
+//             &lt;div class="modal-header"&gt;
+//               &lt;button type="button" class="close" data-dismiss="modal"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;span class="sr-only"&gt;Close&lt;/span&gt;&lt;/button&gt;
+//               &lt;h5 class="modal-title" id="myModalLabel"&gt;&lt;i class="fa fa-trash-o fa-fw"&gt;&lt;/i&gt; 删除&lt;/h5&gt;
+//             &lt;/div&gt;
+//             &lt;div class="modal-body"&gt;
+//               &lt;p&gt;确定删除吗？&lt;/p&gt;
+//             &lt;/div&gt;
+//             &lt;div class="modal-footer"&gt;
+//               &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;关闭&lt;/button&gt;
+//               &lt;button type="button" data-dismiss="modal" class="btn btn-primary" @click="deleteOneGroup()"&gt;提交&lt;/button&gt;
+//             &lt;/div&gt;
+//           &lt;/div&gt;
+//         &lt;/div&gt;
+//       &lt;/form&gt;
+//     &lt;/div&gt;
+//     &lt;!-- 编辑 --&gt;
+//     &lt;div class="modal fade" id="eidt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"&gt;
+//       &lt;form id="form1" action="#" method="post" class="form-horizontal form"&gt;
+//         &lt;div class="modal-dialog"&gt;
+//           &lt;div class="modal-content"&gt;
+//             &lt;div class="modal-header"&gt;
+//               &lt;button type="button" class="close" data-dismiss="modal"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;span class="sr-only"&gt;Close&lt;/span&gt;&lt;/button&gt;
+//               &lt;h5 class="modal-title" id="myModalLabel"&gt;&lt;i class="fa fa-pencil-square-o fa-fw"&gt;&lt;/i&gt; 编辑&lt;/a&gt;&lt;/h5&gt;
+//             &lt;/div&gt;
+//             &lt;div class="modal-body"&gt;
+//               &lt;div class="form-group"&gt;
+//                 &lt;label class="col-sm-3 control-label"&gt;用户组名称&lt;/label&gt;
+//                 &lt;div class="col-sm-7"&gt;
+//                   &lt;input type="text" name="sender" class="form-control" :value="activeName" v-model="editGroup.name" /&gt;
+//                 &lt;/div&gt;
+//               &lt;/div&gt;
+//               &lt;div class="form-group"&gt;
+//                 &lt;label class="col-sm-3 control-label"&gt;管理等级&lt;/label&gt;
+//                 &lt;div class="col-sm-6"&gt;
+//                   &lt;input type="text" name="sender" class="form-control" :value="activeLevel" v-model="editGroup.gldj"&gt;
+//                 &lt;/div&gt;
+//               &lt;/div&gt;
+//               &lt;div class="form-group"&gt;
+//                 &lt;label class="col-sm-3 control-label"&gt;描述&lt;/label&gt;
+//                 &lt;div class="col-sm-8"&gt;
+//                   &lt;input type="text" name="sender" class="form-control" :value="activityDescription" v-model="editGroup.description"&gt;
+//                 &lt;/div&gt;
+//               &lt;/div&gt;
+//             &lt;/div&gt;
+//             &lt;div class="modal-footer"&gt;
+//               &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;关闭&lt;/button&gt;
+//               &lt;button type="button" class="btn btn-primary" data-dismiss="modal" @click="editOneGroup()"&gt;提交&lt;/button&gt;
+//             &lt;/div&gt;
+//           &lt;/div&gt;
+//         &lt;/div&gt;
+//       &lt;/form&gt;
+//     &lt;/div&gt;
+//     &lt;!-- 添加 --&gt;
+//     &lt;div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"&gt;
+//       &lt;form id="form1" action="#" method="post" class="form-horizontal form"&gt;
+//         &lt;div class="modal-dialog"&gt;
+//           &lt;div class="modal-content"&gt;
+//             &lt;div class="modal-header"&gt;
+//               &lt;button type="button" class="close" data-dismiss="modal"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;span class="sr-only"&gt;Close&lt;/span&gt;&lt;/button&gt;
+//               &lt;h5 class="modal-title" id="myModalLabel"&gt;&lt;i class="fa fa-plus fa-fw"&gt;&lt;/i&gt; 新增&lt;/a&gt;&lt;/h5&gt;
+//             &lt;/div&gt;
+//             &lt;div class="modal-body"&gt;
+//               &lt;div class="form-group"&gt;
+//                 &lt;label class="col-sm-3 control-label"&gt;用户组名称&lt;/label&gt;
+//                 &lt;div class="col-sm-7"&gt;
+//                   &lt;input type="text" name="sender" class="form-control" value="" v-model="addGroup.name" /&gt;
+//                 &lt;/div&gt;
+//               &lt;/div&gt;
+//             &lt;/div&gt;
+//             &lt;div class="modal-footer"&gt;
+//               &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;关闭&lt;/button&gt;
+//               &lt;button type="button" data-dismiss="modal" class="btn btn-primary" @click="addOneGroup()"&gt;提交&lt;/button&gt;
+//             &lt;/div&gt;
+//           &lt;/div&gt;
+//         &lt;/div&gt;
+//       &lt;/form&gt;
+//     &lt;/div&gt;
+//   &lt;/div&gt;
+// &lt;/template&gt;
+// &lt;script&gt;
+import common from '../common.js'
+export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+  data () {
+<span class="cstat-no" title="statement not covered" >    r</span>eturn {
+      appTypes: Array,
+      groupList: null,
+      activeCid: null,
+      activeName: null,
+      activityLevel: null,
+      activityDescription: null,
+      addGroup: {
+        name: null,
+        description: null
+      },
+      editGroup: {
+        name: null,
+        description: null,
+        gldj: null
+      },
+      oneAppMsg: null,
+      geted: false
+    }
+  },
+  methods: {
+    doneThing: <span class="fstat-no" title="function not covered" >function (data) {</span>
+<span class="cstat-no" title="statement not covered" >      c</span>onsole.log(data)
+<span class="cstat-no" title="statement not covered" >      if (data.status) {</span>
+<span class="cstat-no" title="statement not covered" >        t</span>his.getGroupList()
+      };
+<span class="cstat-no" title="statement not covered" >      c</span>ommon.alertBox(data.message)
+    },
+    getGroupList: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >      t</span>his.geted = false
+<span class="cstat-no" title="statement not covered" >      c</span>ommon.ajax('get', '/admin/roles', this.useGroupList, {}, 'json')
+    },
+    useGroupList: <span class="fstat-no" title="function not covered" >function (data) {</span>
+<span class="cstat-no" title="statement not covered" >      if (data.status) {</span>
+<span class="cstat-no" title="statement not covered" >        c</span>onsole.log(data)
+<span class="cstat-no" title="statement not covered" >        t</span>his.groupList = data.roles
+<span class="cstat-no" title="statement not covered" >        t</span>his.geted = true
+      } else {
+<span class="cstat-no" title="statement not covered" >        c</span>ommon.alertBox(data.message)
+      }
+    },
+    changeActiveCid: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >      l</span>et cid = event.currentTarget.getAttribute('cid')
+<span class="cstat-no" title="statement not covered" >      l</span>et cname = event.currentTarget.getAttribute('cname')
+<span class="cstat-no" title="statement not covered" >      l</span>et cdis = event.currentTarget.getAttribute('cdis')
+      // let type = event.currentTarget.getAttribute('type')
+<span class="cstat-no" title="statement not covered" >      t</span>his.activeCid = cid
+<span class="cstat-no" title="statement not covered" >      t</span>his.activeName = cname
+<span class="cstat-no" title="statement not covered" >      t</span>his.activityDescription = cdis
+      // this.activityLevel = type.length &gt; 0 ? type : null
+    },
+    editOneGroup: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >      l</span>et jsonData = JSON.stringify(this.editGroup)
+<span class="cstat-no" title="statement not covered" >      c</span>ommon.ajax('put', '/admin/role/' + this.activeCid, this.doneThing, jsonData, 'json')
+    },
+    deleteOneGroup: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >      l</span>et url = '/admin/role/' + this.activeCid
+<span class="cstat-no" title="statement not covered" >      c</span>ommon.ajax('delete', url, this.doneThing, {}, 'json')
+    },
+    addOneGroup: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >      v</span>ar jsonData = JSON.stringify(this.addGroup)
+<span class="cstat-no" title="statement not covered" >      c</span>ommon.ajax('post', '/admin/roles', this.doneThing, jsonData, 'json')
+    }
+  },
+  ready () {
+<span class="cstat-no" title="statement not covered" >    t</span>his.getGroupList()
+  }
+}
+// &lt;/script&gt;
+&nbsp;
+/* generated by vue-loader */
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jul 29 2016 19:51:17 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+html,body,h1,h2,h3{font-family:arial, 'Hiragino Sans GB', 'Microsoft Yahei', 'Î¢ÈíÑÅºÚ', 'ËÎÌå', \5b8b\4f53, Tahoma, Arial, Helvetica, STHeiti}
+body{background-color:#3083eb; color:#666;}
+#login { padding-top:25px;}
+#login p{ color:#ffffff;}
+#login p a{ color:#ffffff;}
+
+.tools-message {
+  position: fixed;
+  z-index: 10000;
+  top: 9px;
+  right: 9px;
+  max-width: 350px;
+}

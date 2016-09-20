@@ -1,0 +1,90 @@
+﻿html,body,h1,h2,h3{font-family:arial, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', '宋体', \5b8b\4f53, Tahoma, Arial, Helvetica, STHeiti}
+.ng-cloak{display:none;}
+
+.login-panel {
+    margin-top:40px;
+}
+body{background:#bbbbbb url('../images/bg.jpg') center no-repeat fixed;background-size:cover; height:95px; width:100%;}
+.visible {
+  display: block !important;
+}
+#login,
+#register,
+#forgot {
+  display: none;
+}
+#login_bg,
+#register_bg,
+#forgot_bg {
+  display: none;
+}
+#login_bg a,
+#register_bg a,
+#forgot_bg a {
+  text-decoration: underline;
+}
+#login_bg a:hover,
+#register_bg a:hover,
+#forgot_bg a:hover {
+  text-decoration: none;
+}
+.templatemo-login-form-2 {
+	background-color: rgba(255,255,255,1);
+	border-radius: 8px;
+    color: #666;
+	max-width: 450px;
+	padding: 10px 30px 15px 30px;
+	margin: 30px auto 0 auto;
+}
+
+.templatemo-login-form-2 .form-control {
+	color: rgb(255,255,255);
+}
+.templatemo-login-form-2 .control-label { margin-bottom: 10px; }
+.templatemo-login-form-2 .btn-social { max-width: 220px; }
+.templatemo-login-form-2 label { font-weight: 400; }
+.templatemo-form-list-container { max-width: 600px; }
+.templatemo-input-icon-container { position: relative; }
+.templatemo-input-icon-container .fa {
+	color: gray;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+.templatemo-input-icon-container input, 
+.templatemo-input-icon-container textarea {
+	padding-left: 30px;
+}
+
+
+@media screen and (max-width: 767px) {
+	.templatemo-header .col-md-12 {	line-height: 20px; }
+	.templatemo-header .btn { margin-bottom: 15px; }
+	.templatemo-container {	padding: 15px; }
+	.control-wrapper label.fa-label { top: 6px;	}
+	.templatemo-header form { margin-top: 0; }
+}
+@media screen and (max-width: 991px) {
+	.templatemo-login-form-2 .templatemo-one-signin {
+		border-right: none;
+	}
+	.templatemo-login-form-2 .templatemo-other-signin {	padding-top: 30px; }
+	.templatemo-login-form-2 .form-group:last-child { margin-bottom: 30px; }
+	.templatemo-create-account .col-md-6, .templatemo-create-account .col-md-12 {
+		padding-top: 5px;
+		padding-bottom: 15px;
+	}
+	.templatemo-create-account .form-group { margin-bottom: 0; }
+	.templatemo-radio-group { margin-top: 0; }
+	.templatemo-contact-form-2 .checkbox {	margin-bottom: 15px; }
+	.templatemo-contact-form-2 { padding: 30px 30px 0 30px;	}
+	.templatemo-radio-container { margin-left: 30px; }
+}
+
+.tools-message {
+  position: fixed;
+  z-index: 10000;
+  top: 9px;
+  right: 9px;
+  max-width: 350px;
+}

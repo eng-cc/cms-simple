@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/router.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> router.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.92% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.92% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/52</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = {
+  '/loginBox': <span class="fstat-no" title="function not covered" >{</span>
+    component (resolve) {
+<span class="cstat-no" title="statement not covered" >      r</span>equire(['./components/loginBox.vue'], resolve)
+    },
+    // component: componentList.loginBox,
+    subRoutes: {
+      '/login': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/login.vue'], resolve)
+        }
+        // component: componentList.login
+      },
+      '/regainPassword': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/regainPassword.vue'], resolve)
+        }
+        // component: componentList.regainPassword
+      }
+    }
+  },
+  '/index': <span class="fstat-no" title="function not covered" >{</span>
+    component (resolve) {
+<span class="cstat-no" title="statement not covered" >      r</span>equire(['./components/index.vue'], resolve)
+    },
+    // component: componentList.index,
+    subRoutes: {
+      '/indexApp': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/indexApp.vue'], resolve)
+        }
+      },
+      '/account': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/account.vue'], resolve)
+        }
+        // component: componentList.account
+      },
+      'opinion': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/opinion.vue'], resolve)
+        }
+        // component: componentList.opinion
+      },
+      'person': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/person.vue'], resolve)
+        }
+        // component: componentList.person
+      },
+      'notice': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/notice.vue'], resolve)
+        }
+        // component: componentList.notice
+      },
+      'adminApp': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/adminApp.vue'], resolve)
+        }
+        // component: componentList.adminApp
+      },
+      'adminGroups': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/adminGroups.vue'], resolve)
+        }
+        // component: componentList.adminGroups
+      },
+      'teacherManage': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/teacherManage.vue'], resolve)
+        }
+        // component: componentList.teacherManage
+      },
+      'termClassManage': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/termClassManage.vue'], resolve)
+        }
+        // component: componentList.termClassManage
+      },
+      'classStudentManage': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/classStudentManage.vue'], resolve)
+        }
+        // component: componentList.classStudentManage
+      },
+      'classManage': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/classManage.vue'], resolve)
+        }
+        // component: componentList.classManage
+      },
+      'majorManage': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/majorManage.vue'], resolve)
+        }
+        // component: componentList.majorManage
+      },
+      'schoolMaintenance': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/schoolMaintenance.vue'], resolve)
+        }
+        // component: componentList.schoolMaintenance
+      },
+      'studentRoster': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/studentRoster.vue'], resolve)
+        }
+        // component: componentList.studentRoster
+      },
+      'studentQuery': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/studentQuery.vue'], resolve)
+        }
+        // component:componentList.studentQuery
+      },
+      'assessApply': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/assessApply.vue'], resolve)
+        }
+      },
+      'applyManage': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/applyManage.vue'], resolve)
+        }
+      },
+      'teachingWeekly': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/teachingWeekly.vue'], resolve)
+        }
+      },
+      'teacherAttendanceRecord': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/teacherAttendanceRecord.vue'], resolve)
+        }
+      },
+      'app_kqtj': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_kqtj.vue'], resolve)
+        }
+      },
+      'app_kqyc': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_kqyc.vue'], resolve)
+        }
+      },
+      'app_leave': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_leave.vue'], resolve)
+        }
+      },
+      'app_leave_sh': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_leave_sh.vue'], resolve)
+        }
+      },
+      'app_leave_sp': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_leave_sp.vue'], resolve)
+        }
+      },
+      'app_leave_dy': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_leave_dy.vue'], resolve)
+        }
+      },
+      'app_lxdj': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_lxdj.vue'], resolve)
+        }
+      },
+      'app_lxdj_gl': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_lxdj_gl.vue'], resolve)
+        }
+      },
+      'app_lxdj_tj': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_lxdj_tj.vue'], resolve)
+        }
+      },
+      'app_xsbbt': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_xsbbt.vue'], resolve)
+        }
+      },
+      'app_xsbbt_gl': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_xsbbt_gl.vue'], resolve)
+        }
+      },
+      'app_xsbbt_tj': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_xsbbt_tj.vue'], resolve)
+        }
+      },
+      'app_xxcx_cjcx': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_xxcx_cjcx.vue'], resolve)
+        }
+      },
+      'schoolCommunication': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['components/schoolCommunication.vue'], resolve)
+        }
+      },
+      'app_xxcx_bjtxl': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_xxcx_bjtxl.vue'], resolve)
+        }
+      },
+      'app_xxcx_bolt': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_xxcx_bolt.vue'], resolve)
+        }
+      },
+      'app_xszbh': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_xszbh.vue'], resolve)
+        }
+      },
+      'app_xszgl': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_xszgl.vue'], resolve)
+        }
+      },
+      'app_duty': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_duty.vue'], resolve)
+        }
+      },
+      'app_duty_add': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_duty_add.vue'], resolve)
+        }
+      },
+      'app_duty_del': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_duty_del.vue'], resolve)
+        }
+      },
+      'admin_feedback': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/admin_feedback.vue'], resolve)
+        }
+      },
+      'admin_authorization': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/admin_authorization.vue'], resolve)
+        }
+      },
+      'app_rxjyks': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_rxjyks.vue'], resolve)
+        }
+      },
+      'app_photo': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_photo.vue'], resolve)
+        }
+      },
+      'app_ncuhome': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_ncuhome.vue'], resolve)
+        }
+      },
+      'admin_photo': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/admin_photo.vue'], resolve)
+        }
+      },
+      'app_zzbd': <span class="fstat-no" title="function not covered" >{</span>
+        component (resolve) {
+<span class="cstat-no" title="statement not covered" >          r</span>equire(['./components/app_zzbd.vue'], resolve)
+        }
+      }
+    }
+  }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jul 29 2016 19:51:17 GMT+0800 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
