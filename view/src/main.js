@@ -1,34 +1,30 @@
 import Vue from 'vue'
+import App from './components/index.vue'
 import VueRouter from 'vue-router'
-import common from './common.js'
-// import store from './vuex/store.js'
-import routerMap from './router.js'
+import addArticle from './components/add_article/index.vue'
+import login from './components/login/index.vue'
+import addUser from './components/add_user/index.vue'
 
 Vue.use(VueRouter)
-// var App = Vue.extend({store})
-var router = new VueRouter({
+
+const router = new VueRouter({
   mode: 'history',
-  routers: routerMap
+  base: __dirname,
+  routes: [{
+    path: '/add_article',
+    component: addArticle
+  }, {
+    path: '/login',
+    component: login
+  }, {
+    path: '/add_user',
+    component: addUser
+  }]
 })
 
 window.router = router
-router.beforeEach(() => {
-  console.clear()
-})
-router.afterEach(() => {
-  setTimeout(function () {
-    $('.tablesorter').tablesorter()
-  }, 3000)
-  setTimeout(function () {
-    common.autoChangeTitle()
-  }, 250)
-})
-
-// const App = {
-//   temponent: require('./components/index.vue')
-// }
 
 new Vue({
   router,
-  render: h => h(require('./components/index.vue'))
+  render: h => h(App)
 }).$mount('#app')

@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
 var config = require('config-lite').mongodb
 
-mongoose.connect(config.url, function (err) {
+mongoose.connect(config.url, {promiseLibrary: require('bluebird')}, function (err) {
   if (err) {
     console.error('connect to %s error: ', config.url, err.message)
     process.exit(1)
@@ -9,5 +9,5 @@ mongoose.connect(config.url, function (err) {
 })
 
 exports.User = require('./user.js')
-exports.Topic = require('./topic.js')
+exports.Article_list = require('./article_list.js')
 exports.Comment = require('./comment.js')

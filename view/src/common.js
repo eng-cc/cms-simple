@@ -146,7 +146,7 @@
       xhr.open(method.toUpperCase(), baseUrl + url, true)
       if (tokenOperate.takeToken() && tokenOperate.takeToken().length > 0) {
         let token = tokenOperate.takeToken()
-        xhr.setRequestHeader('Authorization', 'passport ' + token)
+        xhr.setRequestHeader('Authorization', token)
       }
       if (method.toLowerCase() === 'get') {
         xhr.send(null)
