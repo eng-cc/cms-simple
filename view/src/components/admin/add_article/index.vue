@@ -81,8 +81,8 @@
 </style>
 
 <script>
-import common from '../../common.js'
-import Quill from '../../../node_modules/quill/dist/quill'
+import common from '../../../common.js'
+import Quill from '../../../../node_modules/quill/dist/quill'
 export default {
   data () {
     return {

@@ -10,4 +10,4 @@ mongoose.connect(config.url, {promiseLibrary: require('bluebird')}, function (er
 
 exports.User = require('./user.js')
 exports.Article_list = require('./article_list.js')
-exports.Comment = require('./comment.js')
+exports.Article = require('./article.js')

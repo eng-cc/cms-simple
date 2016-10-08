@@ -33,7 +33,7 @@ background: bottom right 15% no-repeat #46B6AC;
 </style>
 
 <script>
-import common from '../../common.js'
+import common from '../../../common.js'
 export default {
   data () {
     return {

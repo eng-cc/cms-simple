@@ -23,9 +23,12 @@ app.use(convert(bodyparser()))
 app.use(async (ctx, next) => {
   if (ctx.request.url !== '/api/token') {
     try {
-      ctx.request.jwt = jwt.verify(ctx.request.header.authorization, 'cms')
+      console.log(ctx.request.header.authorization)
+      if (ctx.request.header.authorization) {
+        ctx.request.jwt = jwt.verify(ctx.request.header.authorization, 'cms')
+        console.log(ctx.request.jwt)
+      }
       await next()
-      console.log(ctx.request.jwt)
     } catch (err) {
       console.log(err)
       // ctx.body = '401'

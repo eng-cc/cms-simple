@@ -10,6 +10,9 @@
   "author": "scc",
   "license": "ISC",
   "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.16.0",
+    "babel-preset-es2017": "^6.16.0",
+    "babel-register": "^6.16.3",
     "bluebird": "^3.4.6",
     "co-cache": "^2.2.0",
     "crypto": "0.0.3",
