@@ -7,7 +7,15 @@ export default {
   data () {
     return {}
   },
-  methods: {}
+  methods: {
+    // async ss () {
+    //   let sss = await ajax('get', '/api/title')
+    //   console.log(sss + 'sss')
+    // }
+  },
+  mounted () {
+    // this.ss()
+  }
 }
 </script>
 

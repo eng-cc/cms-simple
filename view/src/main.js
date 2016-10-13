@@ -1,6 +1,7 @@
 import Vue from 'vue'
 // import selfComponent from './components/component/component'
 import VueRouter from 'vue-router'
+import ajax from './lib/ajax'
 import App from './components/index.vue'
 import addArticle from './components/admin/add_article/index.vue'
 import login from './components/admin/login/index.vue'
@@ -34,6 +35,7 @@ const router = new VueRouter({
 })
 
 window.router = router
+window.ajax = ajax
 
 new Vue({
   router,

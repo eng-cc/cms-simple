@@ -82,6 +82,7 @@
 
 <script>
 import common from '../../../common.js'
+// import {ajax} from '../../../lib/ajax'
 import Quill from '../../../../node_modules/quill/dist/quill'
 export default {
   data () {
@@ -129,14 +130,21 @@ export default {
         this.getSecTitleList()
       }
     },
-    getTitleList () {
+    async getTitleList () {
+      console.time(1)
       common.ajax('get', '/title', this.setTitleList)
+      console.timeEnd(1)
+      // if (msg.status) {
+      //   this.titleList = msg.content
+      //   this.getedTitleList = true
+      // }
     },
     setTitleList (data) {
       console.log(data)
       if (data.status) {
         this.titleList = data.content
         this.getedTitleList = true
+        this.getSecTitleList()
       }
     },
     getSecTitleList () {
@@ -170,7 +178,7 @@ export default {
   mounted () {
     this.getTitleList()
     this.getArticleList()
-    var editor = new Quill('#editor', {
+    new Quill('#editor', { // eslint-disable-line
       modules: {
         toolbar: [
           [{ header: [1, 2, 3, 4, false] }],
@@ -179,7 +187,6 @@ export default {
         ]},
       theme: 'snow'
     })
-    console.log(editor)
   }
 }
 </script>

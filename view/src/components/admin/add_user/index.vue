@@ -46,7 +46,7 @@ export default {
   methods: {
     login () {
       let jsonData = JSON.stringify(this.loginMsg)
-      common.ajax('post', '/adduser', this.afterLogin, jsonData, 'json')
+      common.ajax('post', '/admin/adduser', this.afterLogin, jsonData, 'json')
     },
     afterLogin (data) {
       console.log(data)
