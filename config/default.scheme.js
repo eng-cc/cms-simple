@@ -1,8 +1,12 @@
 var validator = require('validator')
-var crypto = require('coyrto')
+// var crypto = require('coyrto')
 
 module.exports = {
-  '(GET|POST) /signup': {
-    'request': {}
+  '(POST) /api/adduser': {
+    'request': {
+      'body': {
+        'username': validator.isEmail
+      }
+    }
   }
 }

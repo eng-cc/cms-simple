@@ -120,7 +120,7 @@ export default {
           this.addTitleMsg.subTitle = this.addTitleMsg.title
         }
         let jsonData = JSON.stringify(this.addTitleMsg)
-        common.ajax('post', '/title/add', this.addedTitle, jsonData, 'json')
+        common.ajax('post', '/admin/title/add', this.addedTitle, jsonData, 'json')
       }
     },
     addedTitle (data) {
@@ -172,7 +172,7 @@ export default {
       this.addAtricleMsg.belongs = this.activityFirCode + '|' + this.activitySecCode
       this.addAtricleMsg.content = document.querySelector('.ql-editor').innerHTML
       let jsonData = JSON.stringify(this.addAtricleMsg)
-      common.ajax('post', '/article/add', this.doneThing, jsonData, 'json')
+      common.ajax('post', '/admin/article/add', this.doneThing, jsonData, 'json')
     }
   },
   mounted () {

@@ -5,7 +5,7 @@ var jwt = require('jsonwebtoken')
 var bodyparser = require('koa-bodyparser')
 var errorhandler = require('koa-errorhandler')
 var config = require('config-lite')
-// var scheme = require('koa-scheme')
+var scheme = require('koa-scheme')
 // var routerCache = require('koa-router-cache')
 var gzip = require('koa-gzip')
 // var router = require('koa-router')()
@@ -21,7 +21,7 @@ var app = new Koa()
 app.use(convert(errorhandler()))
 app.use(convert(bodyparser()))
 app.use(async (ctx, next) => {
-  if (ctx.request.url !== '/api/token') {
+  if (ctx.request.url !== '/api/admin/token') {
     try {
       console.log(ctx.request.header.authorization)
       if (ctx.request.header.authorization) {
@@ -39,7 +39,7 @@ app.use(async (ctx, next) => {
   }
 })
 app.use(convert(logger()))
-// app.use(scheme(config.schemeConfig))
+app.use(convert(scheme(config.schemeConfig)))
 // app.use(convert(routerCache(config.routerCacheConfig)))
 app.use(convert(gzip()))
 app.use(convert(routerApi.routes()))

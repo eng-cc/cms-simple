@@ -76,7 +76,9 @@ const ajax = (method, url, data, dataType) => {
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
-          resolve(xhr.responseText)
+          if (JSON.parse(xhr.responseText).status) {
+            resolve(JSON.parse(xhr.responseText).content)
+          }
         } else {
           resOpt[`code${xhr.status}`](xhr.responseText) // eslint-disable-lin
           // reject(xhr.status)

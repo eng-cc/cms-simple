@@ -1,7 +1,7 @@
 var Router = require('koa-router')
 var api = new Router()
-var user = require('./user/index.js')
-var article = require('./article/index.js')
-api.use('/api', user.routes())
-api.use('/api', article.routes())
+import commonArticle from './common/article/index'
+var admin = require('./admin/index.js')
+api.use('/api', admin.routes())
+api.use('/api', commonArticle.routes())
 module.exports = api
