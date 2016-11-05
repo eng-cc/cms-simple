@@ -12,7 +12,7 @@ user.post('/adduser', async (ctx, next) => {
     if (queryMsg && queryMsg.username === ctx.request.body.username) {
       ctx.body = JSON.stringify({
         status: 0,
-        message: 'username err'
+        message: '添加失败，用户名已存在'
       })
       console.log(ctx.body)
     } else {
@@ -38,7 +38,6 @@ user.post('/token', async (ctx, next) => {
   try {
     let queryMsg = await userOprt.getUserByName(ctx.request.body.username).then()
     if (queryMsg) {
-      // console.log('+++')
       ctx.request.body.password = Crypto.createHmac('sha256', ctx.request.body.password)
                                         .update('qwer')
                                         .digest('hex')
@@ -50,13 +49,13 @@ user.post('/token', async (ctx, next) => {
       } else {
         ctx.body = JSON.stringify({
           status: 0,
-          message: '密码错误'
+          message: '用户名或密码错误'
         })
       }
     } else {
       ctx.body = JSON.stringify({
         status: 0,
-        token: '用户名错误'
+        token: '用户名或密码错误'
       })
     }
   } catch (e) {

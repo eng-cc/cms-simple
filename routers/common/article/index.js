@@ -1,5 +1,5 @@
 var Router = require('koa-router')
-import articleListOprt from '../../../lib/article_list'
+import articleListOprt from '../../../lib/title_list'
 var articleOprt = require('../../../lib/article.js')
 var article = new Router()
 
@@ -10,7 +10,7 @@ article.get('/title', async (ctx, next) => {
       status: 1,
       content: articleList
     })
-  } catch (e)  {
+  } catch (e) {
     console.log(e)
   }
 })

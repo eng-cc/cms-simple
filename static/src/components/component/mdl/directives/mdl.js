@@ -1,5 +1,7 @@
 export default {
   bind () {
-    componentHandler.upgradeElements(this.el)
+    if (window.componentHandler) {
+      componentHandler.upgradeElements(this.el)
+    }
   }
 }

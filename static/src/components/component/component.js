@@ -9,6 +9,8 @@ import mdlButton from './mdl/button.vue'
 import mdlTextField from './mdl/textField.vue'
 import mdlTabs from './mdl/tabs/tabs.vue'
 import mdlTab from './mdl/tabs/tab.vue'
+import mdlRadio from './mdl/radio.vue'
+import mdlDialogs from './mdl/dialogs.vue'
 
 // directives
 import mdlRippleEffect from './mdl/directives/ripple-effect'
@@ -21,7 +23,10 @@ export const components = {
   qiniuUpload,
   mdlSelect,
   mdlButton,
-  mdlTextField
+  mdlTextField,
+  mdlTabs,
+  mdlRadio,
+  mdlDialogs
 }
 
 export const directives = {
@@ -42,6 +47,8 @@ export default {
     Vue.component('mdl-textfield', mdlTextField)
     Vue.component('mdl-tab', mdlTab)
     Vue.component('mdl-tabs', mdlTabs)
+    Vue.component('mdl-radio', mdlRadio)
+    Vue.component('mdl-dialog', mdlDialogs)
     // directives
     Vue.directive('mdl', mdl)
     Vue.directive('mdlRippleEffect', mdlRippleEffect)

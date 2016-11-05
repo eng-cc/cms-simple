@@ -1,25 +1,19 @@
 var Router = require('koa-router')
-var Crypto = require('crypto')
-var jwt = require('jsonwebtoken')
-var articleListOprt = require('../../../lib/article_list.js')
+var articleListOprt = require('../../../lib/title_list.js')
 var articleOprt = require('../../../lib/article.js')
 var article = new Router()
 
 article.post('/title/add', async (ctx, next) => {
   try {
     if (ctx.request.body.level === '1') {
-      let queryMsg = await articleListOprt.getTitleList().then()
+      let queryMsg = await articleListOprt.getTitleByName(ctx.request.body.title).then()
       console.log(queryMsg)
-      for (var i = queryMsg.length - 1; i >= 0; i--) {
-        if (queryMsg[i].name === ctx.request.body.title) {
-          ctx.body = JSON.stringify({
-            status: 0,
-            message: 'have name'
-          })
-          ctx.close = true
-        }
-      }
-      if (!ctx.close) {
+      if (queryMsg.length > 0) {
+        ctx.body = JSON.stringify({
+          status: 0,
+          message: '栏目已存在'
+        })
+      } else {
         let title = {
           name: ctx.request.body.title,
           id: queryMsg.length,
@@ -27,27 +21,24 @@ article.post('/title/add', async (ctx, next) => {
           sequence: 0,
           subTitlt: []
         }
-        console.log(title)
         let addMsg = await articleListOprt.addTitle(title).then()
-        ctx.body = JSON.stringify({
-          status: 1,
-          level: 1
-        })
+        if (addMsg) {
+          ctx.body = JSON.stringify({
+            status: 1,
+            message: '添加成功'
+          })
+        }
       }
     } else if (ctx.request.body.level === '2') {
-      let firTitleMsg = await articleListOprt
-                                .getTitleById(ctx.request.body.firTitle)
-                                .then()
+      let firTitleMsg = await articleListOprt.getTitleByName(ctx.request.body.firTitle).then()
       console.log(firTitleMsg)
       if (firTitleMsg[0].subTitle.length > 0) {
-        for (var i = firTitleMsg[0].subTitle.length - 1; i >= 0; i--) {
+        for (let i = firTitleMsg[0].subTitle.length - 1; i >= 0; i--) {
           if (firTitleMsg[0].subTitle[i].name === ctx.request.body.subTitle) {
-            console.log('have name')
             firTitleMsg.close = true
             ctx.body = JSON.stringify({
               status: 0,
-              message: 'name have use',
-              level:2
+              message: '栏目已存在'
             })
             break
           }
@@ -56,20 +47,14 @@ article.post('/title/add', async (ctx, next) => {
       if (!firTitleMsg.close) {
         firTitleMsg[0].subTitle.push({
           name: ctx.request.body.subTitle,
-          id: firTitleMsg[0].subTitle.length,
           sequence: 0,
-          author: ctx.request.jwt.username,
+          author: ctx.request.jwt.username
         })
-        console.log(firTitleMsg)
-        let addedSubTitle = await articleListOprt
-                                    .getTitleByIdAndUpdate(ctx.request.body.firTitle,
-                                      firTitleMsg[0].subTitle)
-                                    .then()
-        console.log(addedSubTitle)
+        let addedSubTitle = await articleListOprt.getTitleByNameAndUpdate(ctx.request.body.firTitle, firTitleMsg[0].subTitle).then()
         if (addedSubTitle.ok) {
           ctx.body = JSON.stringify({
             status: 1,
-            message: 'success'
+            message: '添加成功'
           })
         } else {
           ctx.body = JSON.stringify({
@@ -81,6 +66,10 @@ article.post('/title/add', async (ctx, next) => {
     }
   } catch (e) {
     console.log(e)
+    ctx.body = JSON.stringify({
+      status: 0,
+      message: 'false'
+    })
   }
 })
 
@@ -90,19 +79,21 @@ article.post('/article/add', async (ctx, next) => {
       title: ctx.request.body.title,
       author: ctx.request.jwt.username,
       belongs: ctx.request.body.belongs,
-      content: ctx.request.body.content,
+      content: ctx.request.body.content
     }
-    console.log(articleMsg)
     let saveMsg = await articleOprt.addArticle(articleMsg).then()
-    console.log(saveMsg)
     if (saveMsg.title === articleMsg.title) {
       ctx.body = JSON.stringify({
         status: 1,
-        message: 'succ'
+        message: '添加成功'
       })
     }
-  } catch(e) {
+  } catch (e) {
     console.log(e)
+    ctx.body = JSON.stringify({
+      status: 0,
+      message: '添加失败'
+    })
   }
 })
 
